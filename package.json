@@ -2,6 +2,7 @@
   "name": "tester",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8080",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -10,16 +11,22 @@
     "@types/node": "^12.12.47",
     "@types/react": "^16.9.38",
     "@types/react-dom": "^16.9.8",
+    "express": "^4.17.1",
+    "q": "^1.5.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "winston": "^3.3.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=4000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server_start": "rm -R build && npm run build_server_unix && react-scripts build && node server.js",
+    "build_server_unix": "node_modules/.bin/tsc --build tsconfig-server.json && cp -uR ./js/* ./main/ && rm -R js",
+    "build_server_win": "node_modules\\.bin\\tsc --build tsconfig-server.json && xcopy .\\js\\* .\\main\\ /E/H/Y && rmdir js /Q/S"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+
   }
 }
