@@ -14,7 +14,7 @@ module.exports.getConfig = (label:string = "TESTER") => {
         }), winston.format.label({
             "label": label
         }), winston.format.printf((info: TransformableInfo) => {
-            return `[${info.timestamp}] [${info.level.toUpperCase()}] ${info.label} - ${info.message}`;})
+            return `[${info.timestamp}] [${info.level.toUpperCase()}] [${info.label}] - ${info.message}`;})
         )
     }
 };
