@@ -4,6 +4,7 @@ import './App.css';
 import Items from "./ui/Items";
 import RunningItems from "./ui/RunningItems";
 import Schedule from "./ui/Schedule";
+import ConfirmDialog from './ui/components/ConfirmDialog';
 
 class App extends Component{
   state = {
@@ -34,6 +35,8 @@ class App extends Component{
                       {this.state.activeArea === "items" ? <Items></Items> : null}
                       {this.state.activeArea === "runningItems" ? <RunningItems></RunningItems> : null}
                       {this.state.activeArea === "schedule" ? <Schedule></Schedule> : null}
+
+                      <ConfirmDialog></ConfirmDialog>
                   </article>
               </section>
               <footer>

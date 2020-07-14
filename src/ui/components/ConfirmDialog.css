@@ -1,0 +1,94 @@
+.dialog {
+
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+    white-space: nowrap;
+}
+
+.fade {
+    transition: opacity .15s linear;
+}
+
+.modal.show .modal-dialog {
+    transform: none;
+}
+.modal.fade .modal-dialog {
+
+
+}
+
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 10px;
+    background-color: rgb(53, 57, 59);
+}
+
+.modal-title {
+    display: inline;
+}
+
+.modal-content {
+    position: relative;
+    padding-top: 10px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    color: #444a52;
+    background-color: #fdfdfd;
+    background-clip: padding-box;
+    border-radius: 2px;
+    outline: none;
+    box-shadow: 0 0 2px 0 rgba(34, 37, 41, .24);
+    min-width: 200px
+}
+.modal-header {
+
+    border-bottom-color: #f4f4f4;
+}
+.modal-footer {
+
+    border-top-color: #f4f4f4;
+}
+.close {
+    float: right;
+    line-height: 1;
+    color: #555d66;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
+}
+
+.close:hover,
+.close:focus {
+    color: #555d66;
+    text-decoration: none;
+    cursor: pointer;
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+
+.pull-left {
+    float: left!important;
+}
+.dialog-secondary-button{
+    alignment: left;
+}
+.dialog-primary-button{
+    alignment: right;
+    display: none;
+}
+.dialog-message{
+    padding-left: 20px;
+    padding-right: 30px;
+}
