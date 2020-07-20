@@ -17,7 +17,7 @@ class App extends Component{
 
   render() {
       return (
-          <div className="">
+          <div className="box">
               <header className="">
                   <h2>Tester</h2>
               </header>

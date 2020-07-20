@@ -1,7 +1,11 @@
+
+process.on('unhandledRejection', err => {
+    throw err;
+});
+
 const logger = require('./main/logger').getLogger('SERVER');
 const express = require('express');
 const path = require('path');
-
 const configuration = require('./main/configuration');
 const app = express();
 
