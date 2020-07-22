@@ -9,12 +9,11 @@ import {
 */
 import {faFolder, faFlag} from '@fortawesome/free-regular-svg-icons';
 
-import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { faSpinner, faBullseye, faCheck, faBan, faExclamationTriangle, faBolt, faTh, faClock, faWrench, faPlayCircle, faPlus,faPlusCircle, faQuestion, faQuestionCircle, faSearch, faWindowMinimize, faWindowClose} from '@fortawesome/free-solid-svg-icons'
 
 library.add(
-    faFolder,
-    faFlag,
-    faSpinner
+    faFolder, faFlag,
+    faSpinner, faBullseye, faCheck, faBan, faExclamationTriangle, faBolt, faTh, faClock, faWrench, faPlayCircle, faPlus,faPlusCircle, faQuestion, faQuestionCircle, faSearch, faWindowMinimize, faWindowClose
 );
 
 

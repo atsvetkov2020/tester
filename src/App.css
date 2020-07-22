@@ -77,7 +77,53 @@ article {
   }
 }
 
+.itembox {
+  display: block;
+  float: inside;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 1px #000;
+  border-radius: 2px;
+  min-height: 80px;
+  height: 80px;
+  width: 100%;
+  background: #fff;
+}
 
+.itembox-icon-old {
+  color: #3f78de;
+}
 
+.itembox-icon {
+  color: #fff;
+}
+
+.itembox-iconarea{
+  background-color: #797777;
+  float:left;
+  height: 42px;
+  width: 42px;
+  padding: 3px;
+  text-align: center;
+}
+
+.itembox-icon-undefined{
+  color: #30bf3e;
+}
+
+.itembox-icon-pass{
+  color: rgba(83, 181, 248, 0.6);
+}
+.itembox-icon-fail{
+  color: #d95555;
+}
+.itembox-icon-error{
+  color: #ec8f2b;
+}
+.itembox-icon-disabled{
+  color: #e4e7e4;
+}
+.itembox-icon-test{
+  color: #30bf3e;
+}
 
 

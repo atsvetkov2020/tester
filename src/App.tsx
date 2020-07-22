@@ -5,6 +5,7 @@ import Items from "./ui/Items";
 import RunningItems from "./ui/RunningItems";
 import Schedule from "./ui/Schedule";
 import ConfirmDialog from './ui/components/ConfirmDialog';
+import Header from "./ui/components/Header";
 
 class App extends Component{
   state = {
@@ -18,9 +19,7 @@ class App extends Component{
   render() {
       return (
           <div className="box">
-              <header className="">
-                  <h2>Tester</h2>
-              </header>
+             <Header title="Tester"></Header>
               <section>
                   <nav>
                       <ul>
