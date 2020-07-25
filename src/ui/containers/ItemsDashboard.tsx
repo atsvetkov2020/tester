@@ -1,5 +1,6 @@
 import React, {Component, ComponentProps} from "react";
 import ItemBox from "../components/ItemBox";
+import ItemGrid from "../components/ItemsGrid"
 
 type ItemsDashboardType = {
     refreshDashboardHandler: NodeJS.Timeout | null,
@@ -17,6 +18,7 @@ export class ItemsDashboard extends Component<DashboardProps>{
         items: []
     }
     public d: boolean = false;
+    private getItemsHandler: any;
 
     debug(message: string){
         if(this.d){
@@ -26,15 +28,13 @@ export class ItemsDashboard extends Component<DashboardProps>{
 
     constructor(props: DashboardProps) {
         super(props);
-        this.setState({
-            getItemsHandler: this.props.getItemsMethod
-        });
+        this.getItemsHandler = this.props.getItemsMethod;
         this.d = (props.debug === true);
     }
     
     refresh(){
-        if(this.state.getItemsHandler){
-            const refreshed = this.state.getItemsHandler.call(this);
+        if(this.getItemsHandler){
+            const refreshed = this.getItemsHandler.call(this);
             this.setState({items: refreshed});
         }
     }
@@ -47,14 +47,10 @@ export class ItemsDashboard extends Component<DashboardProps>{
     }
 
     render() {
+        const items = this.getItemsHandler();
         return (
             <div>
-                <ItemBox itemstatus="unknown"></ItemBox>
-                <ItemBox itemstatus="pass"></ItemBox>
-                <ItemBox itemstatus="fail"></ItemBox>
-                <ItemBox itemstatus="error"></ItemBox>
-                <ItemBox itemstatus="disabled"></ItemBox>
-                <ItemBox itemstatus="test"></ItemBox>
+                <ItemGrid items={items}></ItemGrid>
             </div>
         );
     }

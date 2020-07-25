@@ -51,6 +51,10 @@ const item = (props: any) => {
             <div className="itembox-iconarea">
             <FontAwesomeIcon icon={iconDistr} spin={spin} size="2x" className={itemBoxIconClass.join(" ")} />
             </div>
+            <div className="itembox-content">
+                <span className="itembox-title">{props.title}</span>
+                <span className="itembox-starttime">{new Date(Date.now()).toUTCString()}</span>
+            </div>
         </div>
     )
 }

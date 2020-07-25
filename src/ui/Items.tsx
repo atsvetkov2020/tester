@@ -1,13 +1,14 @@
 import React, {Component} from "react";
 import {ItemsDashboard} from "./containers/ItemsDashboard";
-class Items extends Component{
+
+type ItemsProps = any;
+
+class Items extends Component<ItemsProps>{
 
     render() {
         return (<div>
-            <h1 className="">Items
-
-            </h1>
-            <ItemsDashboard></ItemsDashboard>
+            <h1 className="">Items</h1>
+            <ItemsDashboard getItemsMethod={this.props.getItemsHandler}></ItemsDashboard>
             </div>
         )
     }

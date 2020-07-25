@@ -1,3 +1,69 @@
 {
-  "port": 9000
+  "port": 9000,
+  "storage": "local",
+  "data": [
+    {
+      "id": "Group1",
+      "name": "Group1",
+      "items": [
+        {
+          "id": "Group1Test01",
+          "name": "Group1Test01",
+          "test": "Group1Test01",
+          "type": "MochaTest",
+          "category": "nodejs",
+          "enabled": true,
+          "frequency": 10
+        },
+        {
+          "id": "Group1Test02",
+          "name": "Group1Test02",
+          "test": "Group1Test02",
+          "type": "MochaTest",
+          "category": "nodejs",
+          "enabled": true,
+          "frequency": 60
+        }
+      ]
+    },
+    {
+      "id": "Group2",
+      "name": "Group2",
+      "items": [
+        {
+          "id": "Group2Test01",
+          "name": "Group2Test01",
+          "test": "Group2Test01",
+          "type": "MochaTest",
+          "category": "nodejs",
+          "enabled": true,
+          "frequency": 15
+        }
+      ]
+    },
+    {
+      "id": "Group3",
+      "name": "Group3",
+      "items": [
+        {
+          "id": "Group3Test01",
+          "name": "Group3Test01",
+          "test": "Group3Test01",
+          "type": "MochaTest",
+          "category": "nodejs",
+          "enabled": false,
+          "frequency": 30
+        },
+        {
+          "id": "Group3Test02",
+          "name": "Group3Test02",
+          "test": "Group3Test02",
+          "type": "MochaTest",
+          "category": "nodejs",
+          "enabled": true,
+          "frequency": 5
+        }
+      ]
+    }
+  ]
 }
