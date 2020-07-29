@@ -94,12 +94,14 @@ article {
 
 .itembox-icon {
   color: #fff;
+  margin: auto;
 }
 
 .itembox-iconarea{
   background-color: #797777;
   float:left;
-  display: block;
+  display: flex;
+  justify-content: center;
   height: 42px;
   width: 42px;
   padding: 3px;
@@ -107,9 +109,8 @@ article {
 }
 
 .itembox-icon-undefined{
-  color: #30bf3e;
+  color: #c5c9c5;
 }
-
 .itembox-icon-pass{
   color: rgba(83, 181, 248, 0.6);
 }
@@ -124,6 +125,25 @@ article {
 }
 .itembox-icon-test{
   color: #30bf3e;
+}
+
+.itembox-undefined{
+  background-color: #c5c9c5;
+}
+.itembox-pass{
+  background-color: rgba(83, 181, 248, 0.6);
+}
+.itembox-fail{
+  background-color: #d95555;
+}
+.itembox-error{
+  background-color: #ec8f2b;
+}
+.itembox-disabled{
+  background-color: #e4e7e4;
+}
+.itembox-test{
+  background-color: #30bf3e;
 }
 
 .itembox-content {
