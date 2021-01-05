@@ -2,7 +2,7 @@
 process.on('unhandledRejection', err => {
     throw err;
 });
-
+const api = require('./main/api/apiv1');
 const logger = require('./main/logger').getLogger('SERVER');
 const express = require('express');
 const path = require('path');
@@ -17,6 +17,9 @@ app.get('/test', (req, res) => res.send('Hello world!'))
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
+
+app.use('/api/v1', api);
+
 
 app.listen(configuration.settings.port);
 

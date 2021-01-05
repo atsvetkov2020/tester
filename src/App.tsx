@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Items from "./ui/Items";
 import RunningItems from "./ui/RunningItems";
@@ -9,7 +8,17 @@ import Header from "./ui/components/Header";
 
 class App extends Component{
   state = {
-      activeArea: "items"
+      activeArea: "items",
+      items: []
+  }
+
+  componentDidMount() {
+    fetch('/api/v1/tester/items')
+        .then(res => res.json())
+        .then((data) => {
+            this.setState({ items: data })
+        })
+        .catch(console.log)
   }
 
   openAreaHandler(area: string) {
@@ -17,50 +26,7 @@ class App extends Component{
   }
 
   getItemsHandler(){
-      return [
-          {
-              "id": "Group55Test01",
-              "name": "Group55Test01",
-              "group-id": "Group55",
-              "group-name": "Group55",
-              "status": "unknown"
-          },
-          {
-              "id": "Group55Test02",
-              "name": "Group55Test02",
-              "group-id": "Group55",
-              "group-name": "Group55",
-              "status": "pass"
-          },
-          {
-              "id": "Group55Test03",
-              "name": "Group55Test03",
-              "group-id": "Group55",
-              "group-name": "Group55",
-              "status": "fail"
-          },
-          {
-              "id": "Group56Test01",
-              "name": "Group56Test01",
-              "group-id": "Group56",
-              "group-name": "Group56",
-              "status": "error"
-          },
-          {
-              "id": "Group57Test01",
-              "name": "Group57Test01",
-              "group-id": "Group57",
-              "group-name": "Group57",
-              "status": "disabled"
-          },
-          {
-              "id": "Group57Test02",
-              "name": "Group57Test02",
-              "group-id": "Group57",
-              "group-name": "Group57",
-              "status": "test"
-          }
-      ];
+      return this.state.items;
   }
 
   render() {
@@ -78,7 +44,7 @@ class App extends Component{
                   </nav>
                   <article>
 
-                      {this.state.activeArea === "items" ? <Items getItemsHandler={this.getItemsHandler}></Items> : null}
+                      {this.state.activeArea === "items" ? <Items getItemsHandler={this.getItemsHandler.bind(this)}></Items> : null}
                       {this.state.activeArea === "runningItems" ? <RunningItems></RunningItems> : null}
                       {this.state.activeArea === "schedule" ? <Schedule></Schedule> : null}
 

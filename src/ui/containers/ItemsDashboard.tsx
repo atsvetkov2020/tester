@@ -2,10 +2,16 @@ import React, {Component, ComponentProps} from "react";
 import ItemBox from "../components/ItemBox";
 import ItemGrid from "../components/ItemsGrid"
 
+/*
 type ItemsDashboardType = {
     refreshDashboardHandler: NodeJS.Timeout | null,
     getItemsHandler: ((...args: any[]) => void) | null,
     items: any[]
+};
+*/
+type ItemsDashboardType = {
+    refreshDashboardHandler: NodeJS.Timeout | null,
+    getItemsHandler: ((...args: any[]) => void) | null
 };
 
 type DashboardProps = any;
@@ -14,8 +20,7 @@ export class ItemsDashboard extends Component<DashboardProps>{
 
     state: ItemsDashboardType = {
         refreshDashboardHandler: null,
-        getItemsHandler: null,
-        items: []
+        getItemsHandler: null
     }
     public d: boolean = false;
     private getItemsHandler: any;
