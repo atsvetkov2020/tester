@@ -5,6 +5,7 @@ import RunningItems from "./ui/RunningItems";
 import Schedule from "./ui/Schedule";
 import ConfirmDialog from './ui/components/ConfirmDialog';
 import Header from "./ui/components/Header";
+import { Link, Route } from 'react-router-dom';
 
 class App extends Component{
   state = {
@@ -36,19 +37,18 @@ class App extends Component{
               <section>
                   <nav>
                       <ul>
-                          <li><a href="#" onClick={this.openAreaHandler.bind(this, "items")}>Items</a></li>
-                          <li><a href="#" onClick={this.openAreaHandler.bind(this, "runningItems")}>Running items</a>
-                          </li>
-                          <li><a href="#" onClick={this.openAreaHandler.bind(this, "schedule")}>Schedule</a></li>
+                          <li><Link to="/">Items link</Link></li>
+                          <li><Link to="/running">Running items link</Link></li>
+                          <li><Link to="/schedule">Schedule link</Link></li>
                       </ul>
                   </nav>
                   <article>
-
-                      {this.state.activeArea === "items" ? <Items getItemsHandler={this.getItemsHandler.bind(this)}></Items> : null}
-                      {this.state.activeArea === "runningItems" ? <RunningItems></RunningItems> : null}
-                      {this.state.activeArea === "schedule" ? <Schedule></Schedule> : null}
-
-                      <ConfirmDialog></ConfirmDialog>
+                    <Route path='/' exact render={(props) => (
+                        <Items {...props} getItemsHandler={this.getItemsHandler.bind(this)} />
+                    )}></Route>
+                    <Route path="/running" component={RunningItems}></Route>
+                    <Route path="/schedule" component={Schedule}></Route>
+                    <ConfirmDialog></ConfirmDialog>
                   </article>
               </section>
               <footer>
