@@ -19,7 +19,7 @@
     "@types/react-router-dom": "^5.1.7",
     "bootstrap": "^4.5.3",
     "cuid": "^2.1.8",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "fs": "0.0.1-security",
     "jquery": "^3.5.1",
     "path": "^0.12.7",
